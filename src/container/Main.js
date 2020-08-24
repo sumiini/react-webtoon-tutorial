@@ -6,6 +6,15 @@ import Gnb from "../component/Gnb";
 import Footer from "../component/Footer";
 
 class Main extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state={
+            day:'mon',
+            webtoonList : []
+        };
+    }
+    
     render(){
         return(
             <div>
