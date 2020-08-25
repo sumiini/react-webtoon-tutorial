@@ -22,18 +22,18 @@ class Main extends React.Component{
         this._getList();
     }
     _getList(){
-        const apiUrl = 'dummy/webtoon_list.json';
+        const apiUrl = '../../public/dummy/webtoon_list.json';
 
         axios.get(apiUrl)
-            .then(function (data ) {
-                this.setState({
-                    webtoonList:data.data.webtoonList
-                });
-            })
-            .catch(function (error) {
-                console.log(error);
+        .then(data => {
+            //가지고 온 리스트를 state에 저장합니다.
+            this.setState({
+                webtoonList : data.data.webtoonList
             });
-
+        })
+        .catch(error => {
+            console.log(error);
+        });
         
 
     }
