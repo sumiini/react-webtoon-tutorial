@@ -25,6 +25,8 @@ const WebtoonList =(props) =>{
     )
 }
 
+export default WebtoonList;
+
 /*
 
 const WebtoonList(props){

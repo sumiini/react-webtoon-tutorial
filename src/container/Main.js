@@ -6,6 +6,7 @@ import axios from 'axios';
 import Header from "../component/Header";
 import Gnb from "../component/Gnb";
 import Footer from "../component/Footer";
+import webtoonList from "../component/WebtoonList";
 
 class Main extends React.Component{
     constructor(props){
