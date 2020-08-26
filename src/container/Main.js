@@ -6,14 +6,14 @@ import axios from 'axios';
 import Header from "../component/Header";
 import Gnb from "../component/Gnb";
 import Footer from "../component/Footer";
-import webtoonList from "../component/WebtoonList";
+import WebtoonList from "../component/WebtoonList";
 
 class Main extends React.Component{
     constructor(props){
         super(props);
         
         this.state={
-            day:'mon',
+            day:"mon",
             webtoonList : []
         };
     }
@@ -22,7 +22,7 @@ class Main extends React.Component{
         this._getList();
     }
     _getList(){
-        const apiUrl = '../../public/dummy/webtoon_list.json';
+        const apiUrl = 'dummy/webtoon_list.json';
 
         axios.get(apiUrl)
         .then(data => {
@@ -39,6 +39,7 @@ class Main extends React.Component{
     }
     
     render(){
+        console.log(this.state.webtoonList.length)
         return(
             <div>
                 <Header/>
@@ -46,7 +47,7 @@ class Main extends React.Component{
                 {
                     this.state.webtoonList.length > 0? 
                     (
-                        <webtoonList list={
+                        <WebtoonList list={
                             this.state.webtoonList.filter(webtoon => (
                                 //filter는 array의 모든 아이템을 통해 함수를 실행하고 true인 아이템들만 가지고 새로운 array만든다.
                                 webtoon.day === this.state.day //웹툰 리스트 중 요일에 해당하는 웹툰만 반환
@@ -58,7 +59,8 @@ class Main extends React.Component{
                         <span>
                             Loading...
                         </span>
-                    )}
+                )}
+                
                 <Footer />
             </div>
             
