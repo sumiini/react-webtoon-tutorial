@@ -20,9 +20,9 @@ class Viewr extends React.Component{
         const apiUrl = '/dummy/episode_list.json';
 
         axios.get(apiUrl)
-            .then(data => {
+            .then(obj => {
                 this.setState({
-                    episode : data.data.webtoonEpisodes.find(episode => (
+                    episode : obj.data.webtoonEpisodes.find(episode => (
                         episode.id===this.state.episodeId
                     ))
                 });

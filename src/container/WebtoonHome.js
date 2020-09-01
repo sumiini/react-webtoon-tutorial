@@ -28,9 +28,9 @@ class WebtoonHome extends React.Component{
         const apiUrl = '/dummy/webtoon_detail.json';
 
         axios.get(apiUrl)
-            .then(data=>{
+            .then(obj=>{
                 this.setState({
-                    webtoon : data.data.webtoons.find(w => (
+                    webtoon : obj.data.webtoons.find(w => (
                         w.id===this.state.webtoonId
                     ))
                 });
@@ -43,9 +43,9 @@ class WebtoonHome extends React.Component{
         const apiUrl = '/dummy/episode_list.json';
 
         axios.get(apiUrl)
-            .then(data =>{
+            .then(obj =>{
                 this.setState({
-                    episodeList : data.data.webtoonEpisodes.filter(episode =>(
+                    episodeList : obj.data.webtoonEpisodes.filter(episode =>(
                         episode.webtoonId === this.state.webtoonId
 
                     ))
